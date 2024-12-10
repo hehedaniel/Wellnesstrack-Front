@@ -1,0 +1,14 @@
+/* Estilos para que no tenga fondo y se muesrte encima de todo */
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 9999;
+}

@@ -1,0 +1,65 @@
+.swichtContentDiv {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 16vh;
+}
+
+.form-header {
+   padding-bottom: 3%;
+   width: 80%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.close-button {
+   font-size: 24px;
+   cursor: pointer;
+}
+
+.divBtns {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+button {
+   border: 0;
+   border-radius: 8px;
+}
+
+.btnSwitchProponer {
+   width: 30%;
+   color: white;
+   height: 35px;
+}
+
+.btnReceta {
+   background-color: var(--TERTIARY_600);
+}
+
+.btnAlimento {
+   background-color: var(--PRIMARY_500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   .swichtContentDiv {
+      padding-top: 4%;
+   }
+   button {
+      font-size: 14px;
+   }
+
+   h1 {
+      font-size: 24px;
+   }
+}
+
+@media (max-width: 576px) {
+   button {
+      font-size: 14px;
+   }
+}

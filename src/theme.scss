@@ -1,0 +1,77 @@
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+// $my-theme-primary: mat-palette($mat-teal, 600);
+// // $my-theme-secondary: mat-palette($mat-teal, 500);
+
+// $my-theme-accent: mat-palette($mat-indigo, 500);
+
+// $my-theme-warn: mat-palette($mat-deep-orange, A400);
+
+// /* Define your custom color palette */
+// // $my-theme-primary: mat-palette($mat-blue, 300);
+// // $my-theme-accent: #FF4081;
+// // $my-theme-warn: #F44336;
+
+
+// $my-theme: mat-light-theme($my-theme-primary, $my-theme-warn, $my-theme-accent);
+
+// @include angular-material-theme($my-theme);
+
+@import '~@angular/material/theming';
+
+/* Include the common styles for Angular Material. This includes mixins that are used in multiple components. */
+@include mat-core();
+
+/* Define your custom color palette */
+$primary-color: #0EBEA2;
+$accent-color: #FF4081;
+$warn-color: #F44336;
+
+/* Create your custom palettes using mat-palette */
+$custom-primary: mat-palette((
+  50: $primary-color,
+  100: $primary-color,
+  200: $primary-color,
+  300: $primary-color,
+  400: $primary-color,
+  500: $primary-color,
+  600: $primary-color,
+  700: $primary-color,
+  800: $primary-color,
+  900: $primary-color,
+  A100: $primary-color,
+  A200: $primary-color,
+  A400: $primary-color,
+  A700: $primary-color,
+  contrast: (
+    50: mat-contrast(50),
+    100: mat-contrast(100),
+    200: mat-contrast(200),
+    300: mat-contrast(300),
+    400: mat-contrast(400),
+    500: mat-contrast(500),
+    600: mat-contrast(600),
+    700: mat-contrast(700),
+    800: mat-contrast(800),
+    900: mat-contrast(900),
+    A100: mat-contrast(A100),
+    A200: mat-contrast(A200),
+    A400: mat-contrast(A400),
+    A700: mat-contrast(A700),
+  )
+));
+$custom-accent: mat-palette($mat-indigo, 500, 100, 700);
+$custom-warn: mat-palette($mat-deep-orange, A400);
+
+/* Create your custom theme */
+$custom-theme: mat-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+  )
+));
+
+/* Include the Angular Material theme styles */
+@include angular-material-theme($custom-theme);

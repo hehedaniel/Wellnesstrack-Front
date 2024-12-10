@@ -1,0 +1,18 @@
+<div class="popUp">
+  <div class="form-header">
+    <h2>Introduce el nuevo valor del enlace</h2>
+    <span class="close-button" (click)="closeDialog()" title="Cerrar formulario">X</span>
+  </div>
+  <div class="form-enlace">
+    <form [formGroup]="formEditarEnlace" (ngSubmit)="editarEnlace()">
+      <p>El enlace actual del video es:</p>
+      <div class="input-enlace">
+          <input class="input-field" type="text" placeholder="Nuevo enlace (dejar en blanco para no establecer ninguno)"
+            formControlName="url" [(ngModel)]="url">
+      </div>
+      <div class="pieForm">
+          <button class="proponerEjercicioBtn fakeButton" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

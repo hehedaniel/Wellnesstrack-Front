@@ -1,0 +1,37 @@
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-top: 35px;
+}
+
+.btnForm {
+   margin-bottom: 25px;
+}
+
+.formDatos {
+   max-width: 40%;
+   margin: 0 auto;
+   background-color: var(--SECONDARY_50);
+   margin-top: 20vh;
+   border-radius: 10px;
+   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+   button {
+      font-size: 14px;
+   }
+
+   .formDatos {
+      margin-top: 15vh;
+      max-width: 80%;
+   }
+
+   mat-form-field {
+      width: 80%;
+   }
+}

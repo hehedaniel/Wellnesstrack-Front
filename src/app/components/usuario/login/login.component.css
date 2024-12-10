@@ -1,0 +1,19 @@
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-top: 35px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+   button {
+      font-size: 14px;
+   }
+
+   .example-full-width {
+      width: 80%;
+   }
+}

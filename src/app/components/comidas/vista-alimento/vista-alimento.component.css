@@ -1,0 +1,65 @@
+.contenedorInfo {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 70%;
+}
+
+.alimentoInfo,
+.loading {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   min-height: 500px;
+   background-color: var(--SECONDARY_50);
+   border-radius: 15px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.infoColumna {
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.datosAlimento {
+   background-color: var(--EXTRA_WHITE_LIGHT);
+   border: 1px solid black;
+   border-radius: 15px;
+   display: flex;
+   min-height: 30px;
+   width: 70%;
+}
+
+.datosAlimento > p {
+   margin-top: 10px;
+   margin-left: 5px;
+}
+
+.imgDiv {
+   width: 250px;
+   height: 250px;
+   border-radius: 16px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.imagen {
+   width: 100%;
+   height: auto;
+   border-radius: 15px;
+}
+
+.salirBtn {
+   background-color: var(--TERTIARY_300);
+   border-radius: 20px;
+   padding: 3% 9% 3% 9%;
+   margin-top: 7%;
+}

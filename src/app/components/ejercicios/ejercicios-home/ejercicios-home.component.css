@@ -1,0 +1,78 @@
+.ejerciciosHome {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 5vh;
+   width: 100%;
+}
+
+.content {
+   background-color: var(--SECONDARY_50);
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   width: 85%;
+   height: auto;
+   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 7px;
+}
+
+.date-container {
+   width: 90%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+h1,
+h3 {
+   width: 80%;
+   text-align: left;
+}
+
+button {
+   border: 0;
+   border-radius: 8px;
+}
+
+.divBtn {
+   display: flex;
+   justify-content: space-evenly;
+   width: 80%;
+   text-align: right;
+   margin: 3%;
+}
+
+.btnEjerciciosHome {
+   width: 30%;
+   color: white;
+   height: 35px;
+}
+
+.btnProponer {
+   background-color: var(--TERTIARY_500);
+}
+
+.btnAnadir {
+   background-color: var(--SUCCESS_600);
+}
+
+.tablaEjercicios {
+   width: 100%;
+}
+
+@media (max-width: 768px) {
+   .ejerciciosHome {
+      margin-top: 4vh;
+   }
+
+   h1 {
+      font-size: 24px;
+   }
+   h3 {
+      font-size: 16px;
+   }
+
+   button {
+      font-size: 14px;
+   }
+}

@@ -1,0 +1,55 @@
+<mat-toolbar color="primary" class="toolbar">
+   @if (tamanoPantalla === 'pequena'){
+
+   <button mat-button [matMenuTriggerFor]="menu" class="btnMenu">
+      <mat-icon> menu</mat-icon>
+   </button>
+   <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home">Inicio</button>
+      <button mat-menu-item routerLink="/comidas">Comidas</button>
+      <button mat-menu-item routerLink="/peso">Peso</button>
+      <button mat-menu-item routerLink="/ejercicios">Ejercicios</button>
+      @if(esAdmin){
+      <button mat-menu-item routerLink="/administrar-propuestas">Administrar <span matBadge="{{ nBadge }}"> </span></button>
+      }
+   </mat-menu>
+
+   <img src="../../../assets/logo.svg" alt="Logo de la web" title="Menú" />
+
+   } @else if (tamanoPantalla === 'mediana') {
+
+   <span class="profile-icon" routerLink="/home">
+      <img src="../../../assets/logo.svg" alt="Logo de la web" title="Inicio" />
+   </span>
+   <div class="paginasToolbar">
+      <h3 routerLink="/comidas" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Comidas</h3>
+      <h3 routerLink="/peso" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Peso</h3>
+      <h3 routerLink="/ejercicios" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Ejercicios</h3>
+      @if(esAdmin){
+      <h3 matBadge="{{ nBadge }}" routerLink="/administrar-propuestas" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+         Administrar
+      </h3>
+      }
+   </div>
+
+   } @else {
+
+   <span class="profile-icon" routerLink="/home">
+      <img src="../../../assets/logo.svg" alt="Logo de la web" title="Inicio" />
+   </span>
+   <div class="paginasToolbar">
+      <h3 routerLink="/comidas" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Comidas</h3>
+      <h3 routerLink="/peso" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Peso</h3>
+      <h3 routerLink="/ejercicios" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Ejercicios</h3>
+      @if(esAdmin){
+      <h3 matBadge="{{ nBadge }}" routerLink="/administrar-propuestas" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+         Administrar
+      </h3>
+      }
+   </div>
+   <p class="usuarioNombre">{{ nombre }}</p>
+
+   }
+
+   <img src="../../../assets/icons/PerfilIconBlack36.svg" routerLink="/login" alt="Icono de perfil" title="Perfil" class="fakeButton" />
+</mat-toolbar>

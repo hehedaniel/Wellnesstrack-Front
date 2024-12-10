@@ -1,0 +1,57 @@
+<div class="page-container">
+   <div class="table-wrapper">
+      @if(existeData){
+      <table mat-table [dataSource]="dataSource" matSort>
+         <!-- Fecha y Hora Column -->
+         <ng-container matColumnDef="fechaHora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha y Hora</th>
+            <td mat-cell *matCellDef="let row">{{ row.fechaHora }}</td>
+         </ng-container>
+
+         <!-- Peso Column -->
+         <ng-container matColumnDef="peso">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Peso (kg)</th>
+            <td mat-cell *matCellDef="let row">{{ row.peso }}</td>
+         </ng-container>
+
+         <!-- Acciones Column -->
+         <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell class="td-acciones" *matCellDef="let row">
+               <div class="accionesDiv">
+                  <img
+                     matSuffix
+                     class="edit-button fakeButton"
+                     src="../../../assets/icons/editBlack12.svg"
+                     alt="Botón de editar"
+                     (click)="editPeso(row)"
+                  />
+                  <img
+                     matSuffix
+                     class="delete-button fakeButton"
+                     src="../../../assets/icons/deleteBlack12.svg"
+                     alt="Botón de eliminar"
+                     (click)="deletePeso(row)"
+                  />
+               </div>
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      }@else if (sinDatos){
+      <div class="divNoData">
+         <p>¡No se han encontrados ejercicios realizados en el dia seleccionado!</p>
+      </div>
+      } @else {
+      <div class="loading-container">
+         <mat-spinner></mat-spinner>
+         <p>Comprobando registros...</p>
+      </div>
+      }
+   </div>
+   <div class="divBtn">
+      <button class="anadirBtn fakeButton" (click)="anadirPeso()">Añadir</button>
+   </div>
+</div>

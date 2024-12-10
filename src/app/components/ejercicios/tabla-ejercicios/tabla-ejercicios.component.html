@@ -1,0 +1,65 @@
+<div class="page-container">
+   <div class="table-wrapper">
+      @if (existeData) {
+      <table mat-table [dataSource]="dataSource" matSort>
+         <!-- Dia Column -->
+         <ng-container matColumnDef="dia">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef mat-sort-header>Dia</th>
+            <td class="tdTabla" mat-cell *matCellDef="let row">{{ row.dia }}</td>
+         </ng-container>
+
+         <!-- Hora Column -->
+         <ng-container matColumnDef="hora">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
+            <td class="tdTabla" mat-cell *matCellDef="let row">{{ row.hora }}</td>
+         </ng-container>
+
+         <!-- Nombre Column -->
+         <ng-container matColumnDef="nombre">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td class="tdTabla" mat-cell *matCellDef="let row">
+               <a href="#" (click)="mostrarInfoEjercicio(row, $event)">
+                  {{ row.nombre }}
+               </a>
+            </td>
+         </ng-container>
+
+         <!-- Tiempo Column -->
+         <ng-container matColumnDef="tiempo">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef mat-sort-header>Tiempo</th>
+            <td class="tdTabla" mat-cell *matCellDef="let row">{{ row.tiempo }}</td>
+         </ng-container>
+
+         <!-- Calorias Column -->
+         <ng-container matColumnDef="calorias">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef mat-sort-header>Calorias</th>
+            <td class="tdTabla" mat-cell *matCellDef="let row">{{ row.calorias }}</td>
+         </ng-container>
+
+         <!-- Acciones Column -->
+         <ng-container matColumnDef="acciones">
+            <th class="tituloTabla" mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell class="td-acciones" *matCellDef="let row">
+               <div class="accionesDiv">
+                  <img class="edit-button fakeButton" src="../../../assets/icons/editBlack12.svg" (click)="editarEjercicio(row)" alt="" />
+                  <img class="delete-button fakeButton" src="../../../assets/icons/deleteBlack12.svg" (click)="eliminarEjercicio(row)" alt="" />
+               </div>
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      } @else if (sinDatos){
+      <div class="divNoData">
+         <p>¡No se han encontrados ejercicios realizados en el rango seleccionado!</p>
+      </div>
+      } @else {
+      <div class="loading-container">
+         <mat-spinner></mat-spinner>
+         <p>Comprobando registros...</p>
+      </div>
+      }
+   </div>
+</div>

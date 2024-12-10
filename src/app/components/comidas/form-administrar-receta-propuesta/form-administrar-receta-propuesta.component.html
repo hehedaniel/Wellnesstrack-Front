@@ -1,0 +1,129 @@
+<div class="proponerRecetaBody">
+   <div class="contenedor">
+      <div class="header">
+         <div class="divTitulo">
+            <h1>Administrar receta propuesta</h1>
+         </div>
+         <div class="divInfo">
+            <h4>Información principal de la receta</h4>
+         </div>
+      </div>
+
+      <div class="datosReceta">
+         <div class="partePrinciapl">
+            <div class="principalIzq">
+               <div class="input-div">
+                  <label for="nombre" class="labelInput">Nombre</label>
+                  <input pInputText id="nombre" aria-describedby="nombre-help" [(ngModel)]="nombre" disabled="true" />
+               </div>
+               <div class="input-div">
+                  <label for="instrucciones" class="labelInput">Instrucciones</label>
+                  <textarea id="instrucciones" rows="3" cols="15" [(ngModel)]="instrucciones" pInputTextarea disabled="true"> </textarea>
+               </div>
+            </div>
+
+            <div class="principalDer">
+               @if (tamanoPantalla == 'grande'){
+               <div class="input-div">
+                  <label for="cantidad" class="labelInput">Cantidad del alimento (gr o ml)</label>
+                  <input pInputNumber id="cantidad" [(ngModel)]="cantidad" mode="decimal" [min]="1" disabled="true" />
+               </div>
+
+               }@else { }
+               <div class="input-div">
+                  <label for="descripcion" class="labelInput">Descripción</label>
+                  <textarea id="descripcion" rows="3" cols="15" [(ngModel)]="descripcion" pInputTextarea disabled="true"> </textarea>
+               </div>
+            </div>
+         </div>
+
+         <div class="parteNutrientes">
+            @if(tamanoPantalla == 'grande'){
+            <div class="columna1">
+               <div class="input-div">
+                  <label for="calorias" class="labelInput">Calorías</label>
+                  <input pInputNumber id="calorias" [(ngModel)]="calorias" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               <div class="input-div">
+                  <label for="proteinas" class="labelInput">Proteínas</label>
+                  <input pInputNumber id="proteinas" [(ngModel)]="proteinas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               <div class="input-div">
+                  <label for="grasas" class="labelInput">Grasas</label>
+                  <input pInputNumber id="grasas" [(ngModel)]="grasas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna2">
+               <div class="input-div">
+                  <label for="carbohidratos" class="labelInput">Carbohidratos</label>
+                  <input pInputNumber id="carbohidratos" [(ngModel)]="carbohidratos" mode="decimal" [min]="1" disabled="true" />
+               </div>
+
+               <div class="input-div">
+                  <label for="azucares" class="labelInput">Azúcares</label>
+                  <input pInputNumber id="azucares" [(ngModel)]="azucares" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna3">
+               <div class="image-placeholder">
+                  @if (tamanoPantalla == 'grande'){
+                  <p-image [src]="imagen" alt="Imagen de muestra" width="250" height="250" [preview]="imagen" disabled="true" />
+                  }@else {
+                  <p-image [src]="imagen" alt="Imagen de muestra" width="125" height="125" [preview]="imagen" disabled="true" />
+                  }
+               </div>
+            </div>
+            }@else {
+            <div class="columna1">
+               <div class="input-div nutrientes">
+                  <label for="calorias" class="labelInput">Calorías</label>
+                  <input pInputNumber id="calorias" [(ngModel)]="calorias" mode="decimal" [min]="1" disabled="true" />
+               </div>
+
+               <div class="input-div">
+                  <label for="cantidad" class="labelInput">Cantidad (gr o ml)</label>
+                  <input pInputNumber id="cantidad" [(ngModel)]="cantidad" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna2">
+               <div class="input-div nutrientes">
+                  <label for="carbohidratos" class="labelInput">Carbohidratos</label>
+                  <input pInputNumber id="carbohidratos" [(ngModel)]="carbohidratos" mode="decimal" [min]="1" disabled="true" />
+               </div>
+
+               <div class="input-div nutrientes">
+                  <label for="azucares" class="labelInput">Azúcares</label>
+                  <input pInputNumber id="azucares" [(ngModel)]="azucares" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna3">
+               <div class="input-div nutrientes">
+                  <label for="proteinas" class="labelInput">Proteínas</label>
+                  <input pInputNumber id="proteinas" [(ngModel)]="proteinas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               <div class="input-div nutrientes">
+                  <label for="grasas" class="labelInput">Grasas</label>
+                  <input pInputNumber id="grasas" [(ngModel)]="grasas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+            <div class="image-placeholder">
+               @if (tamanoPantalla == 'grande'){
+               <p-image [src]="imagen" alt="Imagen de muestra" width="250" height="250" [preview]="imagen" disabled="true" />
+               }@else {
+               <p-image [src]="imagen" alt="Imagen de muestra" width="125" height="125" [preview]="imagen" disabled="true" />
+               }
+            </div>
+            }
+         </div>
+      </div>
+
+      <div class="parteBotones">
+         <button (click)="rechazarReceta()" class="btnRechazar fakeButton">Rechazar</button>
+         <button class="btnAceptar fakeButton" (click)="aceptarReceta()">Aceptar</button>
+      </div>
+   </div>
+</div>

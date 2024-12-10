@@ -1,0 +1,55 @@
+<div class="resumenDiv">
+   @defer{ @if (datos){
+   <div class="infoDiv">
+      <div class="selectorFecha">
+         <div class="infoFecha">
+            <mat-label>Resumen desde {{ fechaInicioMostrar }} hasta {{ fechaFinMostrar }}</mat-label>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+         </div>
+         <mat-date-range-input [formGroup]="rangeoFechas" [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start date" hidden />
+            <input matEndDate formControlName="end" placeholder="End date" hidden />
+         </mat-date-range-input>
+      </div>
+      <div class="graficaNutrientes">
+         <ngx-charts-pie-chart
+            [results]="single"
+            [animations]="true"
+            [gradient]="gradient"
+            [legend]="false"
+            [labels]="showLabels"
+            [doughnut]="false"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+         >
+         </ngx-charts-pie-chart>
+      </div>
+      <div class="datosNutrientes">
+         <p>Calorías: {{ this.single[3].value }} kcal</p>
+         <p>Azúcares: {{ this.single[0].value }} gr</p>
+         <p>Grasas: {{ this.single[2].value }} gr</p>
+         <p>Carbohidratos: {{ this.single[1].value }} gr</p>
+         <p>Proteínas: {{ this.single[4].value }} gr</p>
+      </div>
+   </div>
+   } @else {
+   <div class="noData">
+      <h1>No hay datos para el rango seleccionado</h1>
+      <div>
+         <mat-label>Cambiar rango de fechas</mat-label>
+         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+         <mat-date-range-input [formGroup]="rangeoFechas" [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start date" hidden />
+            <input matEndDate formControlName="end" placeholder="End date" hidden />
+         </mat-date-range-input>
+      </div>
+   </div>
+   } }@loading(minimum 1.2s){
+   <div class="divSpinner">
+      <mat-spinner></mat-spinner>
+   </div>
+   }
+</div>

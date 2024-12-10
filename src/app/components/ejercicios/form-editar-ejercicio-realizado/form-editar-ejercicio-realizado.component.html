@@ -1,0 +1,147 @@
+@if (recibiendoDatos){
+<app-spinner-mostrar></app-spinner-mostrar>
+}@else {
+<div class="form-container">
+   <div class="form-header">
+      <h2>Formulario editar ejercicio realizado</h2>
+      <span class="close-button" (click)="closeDialog()" title="Cerrar formulario">X</span>
+   </div>
+   <div class="form-body">
+      <!-- Columna Izquierda -->
+      <div class="fila1">
+         <div class="input-div">
+            <label for="nombreEjercicioFormulario">Nombre</label>
+            <p-autoComplete
+               placeholder="Buscar ejercicio"
+               [(ngModel)]="nombreEjercicioFormulario"
+               [suggestions]="ejerciciosRecibidosNombre"
+               (completeMethod)="onInputChange()"
+               (onSelect)="mostrar(nombreEjercicioFormulario)"
+            />
+         </div>
+
+         <!-- Tiempo Empleado -->
+         <div class="input-div">
+            <label for="tiempoEmpleado">Tiempo empleado (min)</label>
+            <p-inputNumber
+               id="tiempoEmpleado"
+               [(ngModel)]="tiempoEjercicioFormulario"
+               placeholder="Tiempo"
+               min="1"
+               mode="decimal"
+               name="tiempoEmpleado"
+               (onInput)="calcularCalorias()"
+               [disabled]="tiempoEstado"
+            ></p-inputNumber>
+         </div>
+
+         <!-- Calorías Quemadas -->
+         <div class="input-div-disabled">
+            <label for="caloriasQuemadas">Calorías Quemadas</label>
+            <input id="caloriasQuemadas" type="number" [(ngModel)]="caloriasQuemadas" placeholder="Calorías" min="0" mode="decimal" disabled="true" />
+         </div>
+      </div>
+      <div class="fila2">
+         <!-- Grupo Muscular -->
+         <div class="input-div-disabled">
+            <label for="grupoMuscular">Grupo Muscular</label>
+            <input
+               disabled="true"
+               pInputText
+               type="text"
+               id="grupoMuscular"
+               placeholder="Grupo Muscular"
+               [(ngModel)]="grupoMuscularEjercicioFormulario"
+            />
+         </div>
+
+         <!-- Dificultad -->
+         <div class="input-div-disabled">
+            <label for="dificultad">Dificultad</label>
+            <input pInputText type="text" id="dificultad" placeholder="Dificultad" [(ngModel)]="dificultadEjercicioFormulario" disabled="true" />
+         </div>
+
+         <!-- Valor MET -->
+         <div class="input-div-disabled">
+            <label for="valorMet">Valor MET</label>
+            <input pInputText type="text" id="valorMet" placeholder="Valor MET" [(ngModel)]="valorMetEjercicioFormulario" disabled="true" />
+         </div>
+      </div>
+      <div class="fila3">
+         <!-- Descripción -->
+         <div class="input-div">
+            <label for="descripcion">Descripción del ejercicio</label>
+            <textarea
+               pInputTextarea
+               cols="30"
+               rows="4"
+               id="descripcion"
+               placeholder="Descripción"
+               [(ngModel)]="descripcionEjercicioFormulario"
+               disabled="true"
+            ></textarea>
+         </div>
+
+         <!-- Instrucciones -->
+         <div class="input-div">
+            <label for="instrucciones">Instrucciones del ejercicio</label>
+            <textarea
+               pInputTextarea
+               cols="30"
+               rows="4"
+               id="instrucciones"
+               placeholder="Descripción"
+               [(ngModel)]="instruccionesEjercicioFormulario"
+               disabled="true"
+            ></textarea>
+         </div>
+      </div>
+   </div>
+
+   <!-- Enlaces -->
+   <div class="form-tabla">
+      @if (tieneEnlaces) {
+      <div class="table-container">
+         <table class="tabla-ejercicios">
+            <thead>
+               <tr>
+                  <th>Titulo</th>
+                  <th>Nombre</th>
+               </tr>
+            </thead>
+            <tbody>
+               @for(enlace of enlaces; track 0){
+               <tr>
+                  <td>Enlace 1</td>
+                  <td>
+                     <a href="#" (click)="abrirVideo(enlace.url, $event)">
+                        {{ enlace.url }}
+                     </a>
+                  </td>
+               </tr>
+               }
+            </tbody>
+         </table>
+      </div>
+      } @else {
+      <div class="divNoData">
+         <p>Seleccione un ejercicio para ver sus enlaces</p>
+      </div>
+      }
+   </div>
+
+   <!-- Botones -->
+   <div class="form-footer">
+      <div class="btns-izq">
+         <button class="proponerEjercicioBtn fakeButton" (click)="openDialogProponer()" title="Proponer un ejercicio">Proponer ejercicio</button>
+      </div>
+      <div class="btns-der">
+         @if(!formCorrecto) {
+         <button class="btnDisabled" disabled title="No puedes añadir ejercicios con tiempo negativo">Añadir</button>
+         }@else {
+         <button class="btnAnadir fakeButton" (click)="guardarEjercicioEditado()" title="Añadir ejercicio realizado">Añadir</button>
+         }
+      </div>
+   </div>
+</div>
+}

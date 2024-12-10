@@ -1,0 +1,142 @@
+body {
+   display: flex !important;
+   flex-direction: column !important;
+   justify-content: center !important;
+   align-items: center !important;
+}
+
+.header {
+   background-color: var(--PRIMARY_500);
+   color: rgb(255, 255, 255);
+   background-color: var(--SECONDARY_50);
+   color: rgb(0, 0, 0);
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 12px;
+   margin-bottom: 20px;
+}
+
+.perfilUsuario {
+   background-color: var(--SECONDARY_50);
+   max-width: 70%;
+   margin: auto;
+   padding: 20px;
+   margin-top: 10vh;
+   border-radius: 12px;
+   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seccionPerfil {
+   margin-bottom: 20px;
+}
+
+.seccionPerfil h2 {
+   color: var(--PRIMARY_600);
+   border-bottom: 2px solid var(--PRIMARY_600);
+   margin-bottom: 10px;
+   padding-bottom: 5px;
+}
+
+.infoUsuario {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+.datoUsuario {
+   flex: 1 1 calc(33.333% - 20px);
+   background: var(--EXTRA_WHITE_LIGHTER);
+   padding: 15px;
+   border-radius: 8px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.datoUsuario p {
+   margin: 0;
+   font-weight: bold;
+   overflow: hidden;
+   text-overflow: ellipsis !important;
+}
+
+.label {
+   color: #666666;
+   margin-bottom: 5px;
+}
+
+.icono {
+   width: 16px;
+   height: 16px;
+   cursor: pointer;
+}
+
+.btnCerrarSesion {
+   cursor: pointer;
+   border: 0;
+   border-radius: 8px;
+   width: 25%;
+   height: auto;
+   padding: 0.3rem;
+   color: white;
+   background-color: var(--PRIMARY_500);
+}
+
+.spinnerClass {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90%;
+}
+
+/* -- Responsive -- */
+@media (max-width: 1200px) {
+   .datoUsuario {
+      flex: 1 1 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+   }
+}
+
+@media (max-width: 768px) {
+   .datoUsuario {
+      flex: 1 1 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+   }
+}
+
+@media (max-width: 576px) {
+   * {
+      width: 100%;
+   }
+
+   .datoUsuario {
+      flex: 1 1 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+   }
+
+   .header {
+      flex-direction: column;
+   }
+
+   .header h1 {
+      font-size: 24px;
+      width: 100%;
+   }
+
+   .btnCerrarSesion {
+      font-size: 14px;
+      width: 100%;
+   }
+
+   .perfilUsuario {
+      width: 90%;
+      max-width: 90%;
+      margin-top: 5vh;
+   }
+}

@@ -1,0 +1,21 @@
+<div class="card">
+   <p-stepper [linear]="true">
+      <p-stepperPanel header="Informacion de la comida">
+         <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+            <app-form-proponer-alimento></app-form-proponer-alimento>
+            <div class="flex pt-4 justify-content-end">
+               <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
+            </div>
+         </ng-template>
+      </p-stepperPanel>
+      <p-stepperPanel header="Informacion nutricional">
+         <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+            <app-form-proponer-alimento-nutrientes></app-form-proponer-alimento-nutrientes>
+            <div class="flex pt-4 justify-content-between">
+               <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()" />
+               <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
+            </div>
+         </ng-template>
+      </p-stepperPanel>
+   </p-stepper>
+</div>

@@ -1,0 +1,24 @@
+<div class="popUpCompleto">
+   <div class="cabecera">
+      <h2>Valor actual</h2>
+      <h2 (click)="closeDialog()" class="fakeButton">X</h2>
+   </div>
+
+   <div class="infoUser">
+      <div class="input-div-disabled">
+         <label for="actual" class="labelInput">Valor actual</label>
+         <input pInputText type="text" id="actual" [(ngModel)]="actual" disabled="true" />
+      </div>
+   </div>
+
+   <h2>Introduce el nuevo valor</h2>
+
+   <div class="input-div">
+      <label for="nuevoValor" class="labelInput">Nuevo valor</label>
+      <input pInputText type="text" id="nuevoValor" [(ngModel)]="nuevoValor" />
+   </div>
+
+   <div class="piePopUp">
+      <button class="btnGuardar fakeButton" (click)="actualizar(propiedad)">Guardar</button>
+   </div>
+</div>

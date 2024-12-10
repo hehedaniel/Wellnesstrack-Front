@@ -1,0 +1,21 @@
+<div class="popUpCompleto">
+   <div class="cabecera">
+      <h2>Introduce el nuevo valor</h2>
+
+      <h2 (click)="closeDialog()" class="fakeButton">X</h2>
+   </div>
+
+   <div class="formPeso">
+      <div class="infoPeso">
+         <p>Fecha: {{ fecha }}</p>
+         <p>Hora: {{ hora }}</p>
+      </div>
+      <div class="input-div">
+         <label for="nuevoValor" class="labelInput">Peso (kg)</label>
+         <input pInputText type="text" id="nuevoValor" [(ngModel)]="nuevoValor" />
+      </div>
+   </div>
+   <div class="piePopUp">
+      <button class="btnGuardar" (click)="editarPeso()" type="submit">Guardar</button>
+   </div>
+</div>

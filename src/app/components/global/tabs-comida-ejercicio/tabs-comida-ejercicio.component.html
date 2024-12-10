@@ -1,0 +1,13 @@
+
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Comidas" [class.active]="activeTab == 'Comidas'">
+    <div id="comidasTabs">
+      <app-tabla-comidas />
+    </div>
+  </mat-tab>
+  <mat-tab label="Ejercicio" [class.active]="activeTab == 'Ejercicios'">
+    <div id="ejerciciosTabs">
+        <app-tabla-ejercicios />
+    </div>
+  </mat-tab>
+</mat-tab-group>

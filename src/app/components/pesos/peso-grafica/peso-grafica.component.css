@@ -1,0 +1,76 @@
+.centrarContent {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.graficaPeso {
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 30px;
+}
+
+.titulo {
+   width: 90%;
+   text-align: left;
+}
+.graficaPeso {
+   width: 90%;
+   min-height: 300px;
+}
+
+.graficaPesoIMC {
+   width: 100% !important;
+}
+
+.selFechas {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   margin-top: 2%;
+}
+
+.spinnerCont {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+   h1 {
+      font-size: 24px;
+   }
+
+   .graficaPeso {
+      padding: 0;
+   }
+
+   .selFechas {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+   }
+
+   p,
+   mat-label {
+      font-size: 16px;
+   }
+}
+
+@media (max-width: 576px) {
+   h1 {
+      font-size: 20px;
+   }
+
+   p,
+   mat-label {
+      font-size: 14px;
+   }
+}

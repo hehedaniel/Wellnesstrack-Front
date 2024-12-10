@@ -1,0 +1,111 @@
+@if(ejercicioRecibido){
+<div class="form-container">
+   <div class="form-header">
+      <h2>Información ejercicio</h2>
+      <span class="close-button" (click)="closeDialog()" title="Cerrar formulario">X</span>
+   </div>
+   <div class="form-body">
+      <!-- Columna Izquierda -->
+      <div class="fila1">
+         <div class="input-div-disabled">
+            <label for="nombreEjercicioFormulario">Nombre</label>
+            <input
+               pInputText
+               type="text"
+               id="nombreEjercicioFormulario"
+               placeholder="Nombre ejercicio"
+               [(ngModel)]="nombreEjercicioFormulario"
+               disabled="true"
+            />
+         </div>
+
+         <!-- Valor MET -->
+         <div class="input-div-disabled">
+            <label for="valorMet">Valor MET</label>
+            <input pInputText type="text" id="valorMet" placeholder="Valor MET" [(ngModel)]="valorMetEjercicioFormulario" disabled="true" />
+         </div>
+      </div>
+      <div class="fila2">
+         <!-- Grupo Muscular -->
+         <div class="input-div-disabled">
+            <label for="grupoMuscular">Grupo Muscular</label>
+            <input
+               disabled="true"
+               pInputText
+               type="text"
+               id="grupoMuscular"
+               placeholder="Grupo Muscular"
+               [(ngModel)]="grupoMuscularEjercicioFormulario"
+            />
+         </div>
+
+         <!-- Dificultad -->
+         <div class="input-div-disabled">
+            <label for="dificultad">Dificultad</label>
+            <input pInputText type="text" id="dificultad" placeholder="Dificultad" [(ngModel)]="dificultadEjercicioFormulario" disabled="true" />
+         </div>
+      </div>
+      <div class="fila3">
+         <!-- Descripción -->
+         <div class="input-div">
+            <label for="descripcion">Descripción del ejercicio</label>
+            <textarea
+               pInputTextarea
+               rows="5"
+               id="descripcion"
+               placeholder="Descripción"
+               [(ngModel)]="descripcionEjercicioFormulario"
+               disabled="true"
+            ></textarea>
+         </div>
+
+         <!-- Instrucciones -->
+         <div class="input-div">
+            <label for="instrucciones">Instrucciones del ejercicio</label>
+            <textarea
+               pInputTextarea
+               rows="5"
+               id="instrucciones"
+               placeholder="Descripción"
+               [(ngModel)]="instruccionesEjercicioFormulario"
+               disabled="true"
+            ></textarea>
+         </div>
+      </div>
+   </div>
+
+   <!-- Enlaces -->
+   <div class="form-tabla">
+      @if (tieneEnlaces) {
+      <div class="table-container">
+         <table class="tabla-ejercicios">
+            <thead>
+               <tr>
+                  <th>Titulo</th>
+                  <th>Nombre</th>
+               </tr>
+            </thead>
+            <tbody>
+               @for(enlace of enlaces; track 0){
+               <tr>
+                  <td>Enlace 1</td>
+                  <td>
+                     <a href="#" (click)="abrirVideo(enlace.url, $event)">
+                        {{ enlace.url }}
+                     </a>
+                  </td>
+               </tr>
+               }
+            </tbody>
+         </table>
+      </div>
+      } @else {
+      <div class="divNoData">
+         <p>Seleccione un ejercicio para ver sus enlaces</p>
+      </div>
+      }
+   </div>
+</div>
+}@else {
+<app-spinner-mostrar></app-spinner-mostrar>
+}

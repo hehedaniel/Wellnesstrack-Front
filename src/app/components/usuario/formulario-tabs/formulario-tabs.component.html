@@ -1,0 +1,12 @@
+<mat-tab-group dynamicHeight>
+   <mat-tab label="Iniciar Sesión" [class.active]="activeTab == 'Iniciar sesión'">
+      <div class="" id="loginForm">
+         <app-login></app-login>
+      </div>
+   </mat-tab>
+   <mat-tab label="Registro" [class.active]="activeTab == 'Registro'">
+      <div class="" id="registroForm">
+         <app-registro></app-registro>
+      </div>
+   </mat-tab>
+</mat-tab-group>

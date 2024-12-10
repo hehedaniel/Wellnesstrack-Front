@@ -1,0 +1,72 @@
+/* General Styles */
+.toolbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: var(--PRIMARY_600);
+   padding: 0 10px;
+}
+
+.toolbar h3,
+span {
+   cursor: pointer;
+}
+
+.paginasToolbar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   gap: 5%;
+}
+
+.paginasToolbar h3 {
+   margin: 0 10px;
+   font-size: 28px;
+   font-weight: bold;
+   color: var(--EXTRA_WHITE);
+}
+
+.profile-icon {
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+}
+
+.usuarioNombre {
+   margin-right: 15px;
+}
+
+/* -- Responsive: Hasta 768px -- */
+@media (max-width: 768px) {
+   .paginasToolbar h3 {
+      font-size: 22px;
+      margin: 0 5px;
+   }
+
+   .profile-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+   }
+}
+
+/* -- Responsive: Hasta 576px -- */
+@media (max-width: 576px) {
+   .toolbar {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 2px;
+   }
+
+   .profile-icon img {
+      width: 32px;
+      height: 32px;
+      padding-right: 5px;
+   }
+
+   .btnMenu {
+      width: 48px;
+      height: 48px;
+   }
+}

@@ -1,0 +1,21 @@
+<div class="popUp">
+   <div class="cabecera">
+      <h1>¿Desea eliminar el siguiente peso?</h1>
+   </div>
+
+   <div class="formPeso">
+      <div class="infoPeso">
+         <div class="infoIzq">
+            <p><strong>Fecha: </strong>{{ fecha }}</p>
+            <p><strong>Hora: </strong>{{ hora }}</p>
+         </div>
+         <div class="infoDer">
+            <p><strong>Peso: </strong>{{ peso }} kg</p>
+         </div>
+      </div>
+   </div>
+   <div class="pieForm">
+      <button class="btnCancelar" (click)="closeDialog()">Cancelar</button>
+      <button class="btnEliminar" (click)="deletePeso()" type="submit">Eliminar</button>
+   </div>
+</div>

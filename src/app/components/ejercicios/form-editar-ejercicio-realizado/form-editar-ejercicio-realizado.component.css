@@ -1,0 +1,194 @@
+body {
+   background-color: #f5f5f5;
+}
+
+.form-container {
+   width: 100%;
+   background-color: #ffffff;
+   border: 2px solid black;
+   padding: 20px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header  */
+
+.form-header {
+   display: flex;
+   justify-content: space-between;
+}
+
+.close-button {
+   font-size: 24px;
+   cursor: pointer;
+}
+
+/* Tabla enlace */
+
+.form-tabla {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+table {
+   border-collapse: collapse;
+   width: auto;
+   border: 1px solid var(--PRIMARY_600);
+}
+
+th,
+td {
+   padding: 10px 20px;
+   text-align: center;
+}
+
+th {
+   font-weight: bold;
+   color: white;
+   background-color: var(--PRIMARY_500) !important;
+}
+
+/* FORMULARIO */
+
+.form-body {
+   min-height: 400px;
+   display: flex;
+   flex-direction: column !important;
+   justify-content: space-around;
+}
+
+.input-div input {
+   border: 1px solid var(--EXTRA_GRAY) !important;
+   width: 80% !important;
+   padding: 0.7rem !important;
+   margin: 1% !important;
+   border-radius: 4px !important;
+}
+
+.input-div textarea {
+   border: 1px solid var(--EXTRA_GRAY) !important;
+   width: 100% !important;
+   padding: 0.7rem !important;
+   margin: 1% !important;
+   border-radius: 4px !important;
+}
+
+.input-div p-dropdown {
+   margin: 1% !important;
+}
+
+.input-div,
+.input-div-disabled {
+   display: flex !important;
+   flex-direction: column !important;
+   margin: 1%;
+}
+
+.input-div-disabled input {
+   display: flex !important;
+   flex-direction: column !important;
+   width: 100%;
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   padding: 0.6rem;
+   margin: 1%;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+}
+
+.input-div textarea {
+   display: flex !important;
+   flex-direction: column !important;
+   width: 80%;
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   border-radius: 4px;
+}
+
+.fila1,
+.fila2 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.fila3 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   width: 100%;
+}
+
+/* Botones */
+
+.form-footer {
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 3%;
+   min-width: 600px;
+   width: 100%;
+}
+
+button {
+   color: white;
+   border-radius: 10px;
+   border: none;
+   width: 55%;
+   height: 40px;
+   margin: 3%;
+}
+
+.btns-izq,
+.btns-der {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.proponerEjercicioBtn {
+   background-color: var(--TERTIARY_500);
+}
+
+.btnAnadir {
+   background-color: var(--SUCCESS_600);
+}
+
+.btnDisabled {
+   background-color: var(--EXTRA_WHITE_LIGHT) !important;
+   color: black !important;
+   cursor: not-allowed;
+   opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   .fila1,
+   .fila2,
+   .fila3 {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+   }
+}
+
+@media (max-width: 576px) {
+   .fila1,
+   .fila2,
+   .fila3 {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+   }
+
+   th,
+   td {
+      font-size: 16px;
+   }
+
+   button {
+      font-size: 14px;
+   }
+}

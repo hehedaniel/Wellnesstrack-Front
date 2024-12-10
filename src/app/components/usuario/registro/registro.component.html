@@ -1,0 +1,40 @@
+<div>
+   <form [formGroup]="formularioRegistro" (ngSubmit)="registrarUsuario()" class="form">
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Correo</mat-label>
+         <input class="input" matInput type="email" formControlName="correo" placeholder="Correo" />
+         <mat-icon matSuffix>email</mat-icon>
+         @if(formularioRegistro.get('correo')?.hasError('pattern') || formularioRegistro.get('correo')?.hasError('required')){
+         <mat-error> Por favor, introduzca un correo válido </mat-error>
+         }
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Contraseña</mat-label>
+         <input class="input" [type]="hide ? 'password' : 'text'" matInput formControlName="contrasena" placeholder="Contraseña" />
+         <mat-icon matSuffix (click)="hide = !hide">{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+         @if(formularioRegistro.get('contrasena')?.hasError('required')){
+         <mat-error> Debe indicar la contraseña del usuario </mat-error>
+         }
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Repetir contraseña</mat-label>
+         <input class="input" [type]="hide ? 'password' : 'text'" matInput formControlName="contrasenarepeat" placeholder="Repetir Contraseña" />
+         <mat-icon matSuffix (click)="hide = !hide">{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+         @if(formularioRegistro.get('contrasena')?.hasError('required')){
+         <mat-error> Debe indicar la contraseña del usuario </mat-error>
+         } @if(formularioRegistro.get('contrasena') != formularioRegistro.get('contrasenarepeat')){
+         <mat-error> Ambas contraseñas deben coincidir </mat-error>
+         }
+      </mat-form-field>
+
+      <div class="btnsLogin">
+         <button class="btnLogin fakeButton" type="submit">Registrar</button>
+      </div>
+   </form>
+
+   <div class="p_aviso">
+      <p>Los campos marcados con * son obligatorios</p>
+   </div>
+</div>

@@ -1,0 +1,64 @@
+.popUpCompleto {
+   margin: 5% 3%;
+}
+
+.cabecera {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+h2 {
+   margin-top: 2%;
+   margin-left: 2%;
+}
+
+input {
+   width: 100%;
+   padding: 0.7rem !important;
+   margin: 1% !important;
+   border-radius: 4px !important;
+}
+
+.input-div input {
+   border: 1px solid var(--EXTRA_GRAY) !important;
+}
+
+.input-div,
+.input-div-disabled {
+   display: flex !important;
+   flex-direction: column !important;
+   margin: 1%;
+}
+
+.input-div-disabled input {
+   display: flex !important;
+   flex-direction: column !important;
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   display: flex;
+   align-items: center;
+}
+
+.piePopUp {
+   margin-top: 4%;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+button {
+   padding: 2% 4% 2% 4%;
+   border-radius: 10px;
+   border: none;
+   font-size: 16px;
+}
+
+.btnCancelar {
+   background-color: var(--PRIMARY_300);
+   color: black;
+}
+
+.btnGuardar {
+   background-color: var(--TERTIARY_600);
+   color: white;
+}

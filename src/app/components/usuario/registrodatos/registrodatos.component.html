@@ -1,0 +1,56 @@
+<div class="formDatos">
+   <form [formGroup]="formularioDatos" (ngSubmit)="registrarUsuario()" class="form">
+      <!-- Campo Nombre -->
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Nombre</mat-label>
+         <input class="input" matInput type="text" formControlName="nombre" />
+         @if (formularioDatos.get('nombre')?.hasError('required')) {
+         <mat-error>Por favor, introduzca su nombre</mat-error>
+         } @else if (formularioDatos.get('nombre')?.hasError('pattern')) {
+         <mat-error>El nombre solo puede contener letras</mat-error>
+         }
+      </mat-form-field>
+
+      <!-- Campo Apellidos -->
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Apellidos</mat-label>
+         <input class="input" matInput type="text" formControlName="apellidos" />
+         @if (formularioDatos.get('apellidos')?.hasError('required')) {
+         <mat-error>Por favor, introduzca sus apellidos</mat-error>
+         } @else if (formularioDatos.get('apellidos')?.hasError('pattern')) {
+         <mat-error>Los apellidos solo pueden contener letras</mat-error>
+         }
+      </mat-form-field>
+
+      <!-- Campo Edad -->
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Edad</mat-label>
+         <input class="input" matInput type="number" formControlName="edad" />
+         @if (formularioDatos.get('edad')?.hasError('required')) {
+         <mat-error>Por favor, introduzca su edad</mat-error>
+         } @else if (formularioDatos.get('edad')?.hasError('min')) {
+         <mat-error>La edad debe ser mayor o igual a 1</mat-error>
+         } @else if (formularioDatos.get('edad')?.hasError('max')) {
+         <mat-error>La edad debe ser menor o igual a 120</mat-error>
+         }
+      </mat-form-field>
+
+      <!-- Campo Altura -->
+      <mat-form-field class="mat-form-field inputForm">
+         <mat-label>Altura</mat-label>
+         <input class="input" matInput type="number" formControlName="altura" />
+         @if (formularioDatos.get('altura')?.hasError('required')) {
+         <mat-error>Por favor, introduzca su altura</mat-error>
+         } @else if (formularioDatos.get('altura')?.hasError('min')) {
+         <mat-error>La altura debe ser mayor o igual a 63 cm</mat-error>
+         } @else if (formularioDatos.get('altura')?.hasError('max')) {
+         <mat-error>La altura debe ser menor o igual a 272 cm</mat-error>
+         }
+      </mat-form-field>
+
+      <!-- Botón de Enviar -->
+      <div class="btnsLogin">
+         <button class="btnLogin fakeButton btnForm" type="submit" [disabled]="formularioDatos.invalid">Terminar registro</button>
+      </div>
+   </form>
+</div>

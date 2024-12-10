@@ -1,0 +1,93 @@
+@if (recetaInfoDisponible){
+<div class="proponerRecetaBody">
+   <div class="contenedor">
+      <div class="header">
+         <div class="divTitulo">
+            <h2>Informacion de la {{ receta ? "receta" : "comida" }}</h2>
+         </div>
+      </div>
+
+      <div class="datosReceta">
+         <div class="partePrinciapl">
+            <div class="principalIzq">
+               <div class="input-div-disabled">
+                  <label for="nombre" class="labelInput">Nombre</label>
+                  <input pInputText [(ngModel)]="nombreAlimento" />
+               </div>
+               @if (tamanoPantalla == 'mediana' || tamanoPantalla == 'pequena'){
+               <div class="input-div-disabled">
+                  <label for="calorias" class="labelInput">Calorías (kcal)</label>
+                  <input pInputNumber id="calorias" [(ngModel)]="calorias" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               } @else if (tamanoPantalla == 'grande'){
+               <div class="input-div">
+                  <label for="textareaContent" class="labelInput">Descripción</label>
+                  <textarea id="textareaContent" rows="5" cols="15" [(ngModel)]="textareaContent" pInputTextarea disabled="true"> </textarea>
+               </div>
+               }
+            </div>
+
+            <div class="principalDer">
+               @if (receta){
+               <div class="input-div">
+                  <label for="instrucciones" class="labelInput">Instrucciones</label>
+                  <textarea id="instrucciones" rows="5" cols="15" [(ngModel)]="instrucciones" pInputTextarea disabled="true"> </textarea>
+               </div>
+               }@else {
+               <div class="input-div-disabled">
+                  <label for="marca" class="labelInput">Marca del alimento </label>
+                  <input pInputNumber id="marca" [(ngModel)]="marca" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               } @if (tamanoPantalla == 'pequena' || tamanoPantalla == 'mediana'){
+               <div class="input-div">
+                  <label for="textareaContent" class="labelInput">Descripción</label>
+                  <textarea id="textareaContent" rows="5" cols="15" [(ngModel)]="textareaContent" pInputTextarea disabled="true"> </textarea>
+               </div>
+               }
+            </div>
+         </div>
+
+         <div class="parteNutrientes">
+            <div class="columna1">
+               @if (tamanoPantalla == 'grande'){
+               <div class="input-div-disabled">
+                  <label for="calorias" class="labelInput">Calorías (kcal)</label>
+                  <input pInputNumber id="calorias" [(ngModel)]="calorias" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               }
+               <div class="input-div-disabled">
+                  <label for="proteinas" class="labelInput">Proteínas (gr)</label>
+                  <input pInputNumber id="proteinas" [(ngModel)]="proteinas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+               <div class="input-div-disabled">
+                  <label for="grasas" class="labelInput">Grasas (gr)</label>
+                  <input pInputNumber id="grasas" [(ngModel)]="grasas" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna2">
+               <div class="input-div-disabled">
+                  <label for="carbohidratos" class="labelInput">Carbohidratos</label>
+                  <input pInputNumber id="carbohidratos" [(ngModel)]="carbohidratos" mode="decimal" [min]="1" disabled="true" />
+               </div>
+
+               <div class="input-div-disabled">
+                  <label for="azucares" class="labelInput">Azúcares (gr)</label>
+                  <input pInputNumber id="azucares" [(ngModel)]="azucares" mode="decimal" [min]="1" disabled="true" />
+               </div>
+            </div>
+
+            <div class="columna3">
+               <div class="parteImagen">
+                  <div class="image-placeholder">
+                     <p-image [src]="base64Image" alt="Imagen de muestra" width="200" height="200" [preview]="imgPreview" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+}@else {
+<app-spinner-mostrar></app-spinner-mostrar>
+}

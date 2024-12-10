@@ -1,0 +1,232 @@
+body {
+   background-color: #f5f5f5;
+}
+
+.proponerRecetaBody {
+   max-width: 100%;
+   min-height: auto;
+   background-color: #ffffff;
+   border: 2px solid black;
+   padding: 20px;
+   padding-top: 0;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Diseño del header */
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+
+.divTitulo {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+h2 {
+   font-size: clamp(1rem, 1.8vw, 2rem);
+}
+
+.divInfo {
+   display: flex;
+   justify-content: center;
+   padding: 0;
+}
+
+/* Diseño del formulario */
+
+.contenedor {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.partePrinciapl {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.principalIzq,
+.principalDer {
+   width: 48%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.parteNutrientes {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 2%;
+}
+
+.columna1,
+.columna2 {
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 2%;
+   padding-left: 5%;
+}
+
+.columna3 {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 2%;
+}
+
+/* Para los input */
+
+.input-div input {
+   background-color: #ffffff;
+   border: 1px solid black;
+   width: 80%;
+   padding: 0.6rem;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+}
+
+.input-div-disabled input {
+   display: flex !important;
+   flex-direction: column !important;
+   width: 80%;
+   padding: 0.6rem;
+   border-radius: 4px;
+   display: flex;
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+}
+
+.input-div textarea {
+   display: flex !important;
+   flex-direction: column !important;
+   width: 80%;
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   border-radius: 4px;
+}
+
+.input-div,
+.input-div-disabled {
+   display: flex !important;
+   flex-direction: column !important;
+   margin: 1%;
+   width: 80%;
+}
+
+.labelInput {
+   font-size: 1rem;
+   margin: 0.2rem;
+}
+
+.parteImagen {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.image-placeholder {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+/* Diseño de los botones */
+
+.parteBotones {
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 2%;
+}
+
+button {
+   color: white;
+   padding: 10px 25px;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+.btnRechazar {
+   background-color: var(--TERTIARY_600);
+}
+.btnAceptar {
+   background-color: var(--SUCCESS_600);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   h1 {
+      font-size: 24px;
+   }
+
+   .partePrinciapl,
+   .parteNutrientes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .principalIzq {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+
+   .principalIzq .input-div-disabled {
+      width: 45%;
+   }
+
+   .principalDer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .input-div textarea,
+   .input-div-disabled input {
+      width: 100%;
+   }
+
+   .input-div,
+   .principalDer .input-div-disabled {
+      width: 100%;
+   }
+   .columna1,
+   .columna2 {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+
+   .columna1 .input-div-disabled,
+   .columna2 .input-div-disabled {
+      width: 45%;
+   }
+
+   .columna3 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
+
+@media (max-width: 576px) {
+}

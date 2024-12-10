@@ -1,0 +1,73 @@
+@defer{
+<div class="contenedorInfo">
+   <div class="alimentoInfo">
+      <div class="infoIzq infoColumna">
+         <p>Nombre</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoNombre }}</p>
+         </div>
+
+         <p>Marca</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoMarca }}</p>
+         </div>
+
+         <p>Cantidad</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoCantidad }}</p>
+         </div>
+
+         <p>Calorias</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoCalorias }}</p>
+         </div>
+
+         <p>Grasas</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoGrasas }}</p>
+         </div>
+      </div>
+      <div class="infoCent infoColumna">
+         <div class="imgDiv">
+            <img [src]="alimentoImg" class="imagen" loading="lazy" />
+         </div>
+         <p>Descripcion</p>
+         <div class="datosAlimento descDiv">
+            <p>{{ alimentoDescripcion }}</p>
+         </div>
+      </div>
+      <div class="infoDer infoColumna">
+         <p>Vitaminas</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoVitaminas }}</p>
+         </div>
+
+         <p>Proteínas</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoProteinas }}</p>
+         </div>
+
+         <p>Azúcares</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoAzucar }}</p>
+         </div>
+
+         <p>Carbohidratos</p>
+         <div class="datosAlimento">
+            <p>{{ alimentoCarbohidratos }}</p>
+         </div>
+         <button class="faleButton salirBtn" (click)="salir()">Volver</button>
+      </div>
+   </div>
+</div>
+}@loading(minimum 2s){
+<div class="contenedorInfo">
+   <div class="loading">
+      <mat-spinner></mat-spinner>
+   </div>
+</div>
+}@error {
+<div class="error">
+   <p>Ha ocurrido un error</p>
+</div>
+}

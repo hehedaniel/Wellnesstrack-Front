@@ -1,0 +1,104 @@
+@if (datosUsuarioRecogidos){
+<div class="perfilUsuario">
+   <!-- Encabezado -->
+   <header class="header">
+      <h1>¡Bienvenido, {{ userNombre }}!</h1>
+      <button class="btnCerrarSesion" (click)="cerrarSesion()">Cerrar Sesión</button>
+   </header>
+
+   <!-- Información del Usuario -->
+   <section class="seccionPerfil">
+      <h2>Información Personal</h2>
+      <div class="infoUsuario">
+         <!-- Nombre -->
+         <div class="datoUsuario">
+            <p class="label">Nombre</p>
+            <p>{{ userNombre }}</p>
+            <img
+               class="icono"
+               src="../../../assets/icons/editBlack12.svg"
+               alt="Editar nombre"
+               title="Editar nombre"
+               (click)="editarValor(userNombre, 'nombre')"
+            />
+         </div>
+         <!-- Apellidos -->
+         <div class="datoUsuario">
+            <p class="label">Apellidos</p>
+            <p>{{ userApellidos }}</p>
+            <img
+               class="icono"
+               src="../../../assets/icons/editBlack12.svg"
+               alt="Edita apellidos"
+               title="Edita apellidos"
+               (click)="editarValor(userApellidos, 'apellidos')"
+            />
+         </div>
+         <!-- Correo  -->
+         <div class="datoUsuario">
+            <p class="label">Correo</p>
+            <p>{{ userEmail }}</p>
+            @if (correoVerificado){
+            <img class="icono" src="../../../assets/icons/verifiedBlack12.svg" alt="Correo Verificado" title="Correo Verificado" />
+            }@else {
+            <img
+               class="icono"
+               src="../../../assets/icons/reloadBlack12.svg"
+               alt="Correo no Verificado"
+               (click)="verificarEmail(userEmail, 'email')"
+               title="Verificar Correo"
+            />
+            }
+         </div>
+      </div>
+   </section>
+
+   <!-- Información de Objetivos -->
+   <section class="seccionPerfil">
+      <h2>Objetivos</h2>
+      <div class="infoUsuario">
+         <!-- Altura -->
+         <div class="datoUsuario">
+            <p class="label">Altura</p>
+            <p>{{ userAltura }} cm</p>
+            <img
+               class="icono"
+               src="../../../assets/icons/editBlack12.svg"
+               alt="Editar altura title="
+               Editar
+               altura
+               (click)="editarValor(userAltura, 'altura')"
+            />
+         </div>
+         <!-- Objetivo -->
+         <div class="datoUsuario">
+            <p class="label">Objetivo</p>
+            <p>{{ userObjetivo }}</p>
+            <img
+               class="icono"
+               src="../../../assets/icons/editBlack12.svg"
+               alt="Editar objetivo"
+               title="Editar objetivo"
+               (click)="editarValor(userObjetivo, 'objetivo_opt')"
+            />
+         </div>
+         <!-- Peso Objetivo -->
+         <div class="datoUsuario">
+            <p class="label">Peso Objetivo</p>
+            <p>{{ userPesoObjetivo }} kg</p>
+            <img
+               class="icono"
+               src="../../../assets/icons/editBlack12.svg"
+               alt="Editar peso objetivo"
+               title="Editar peso objetivo"
+               (click)="editarValor(userPesoObjetivo, 'objetivo_num')"
+            />
+         </div>
+      </div>
+   </section>
+</div>
+}@else {
+<div class="spinnerClass">
+   <mat-spinner></mat-spinner>
+</div>
+}

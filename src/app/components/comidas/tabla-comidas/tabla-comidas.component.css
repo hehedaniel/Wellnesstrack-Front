@@ -1,0 +1,141 @@
+/* Estilo general de la tabla */
+.page-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
+   padding: 20px;
+}
+
+/* Contenedor de la tabla */
+.table-wrapper {
+   width: 100%;
+   max-height: 500px;
+   overflow-y: auto;
+   overflow-x: auto;
+   margin-bottom: 20px;
+   position: relative;
+   display: block;
+}
+
+/* Estilo de la tabla */
+table {
+   border-collapse: collapse;
+   width: 100%;
+   border-radius: 8px;
+   min-width: 500px;
+}
+
+th,
+td {
+   padding: 10px 15px;
+   text-align: center;
+   border-bottom: 1px solid var(--PRIMARY_600);
+}
+
+/* Fijar el encabezado */
+th {
+   font-weight: bold;
+   background-color: var(--PRIMARY_500) !important;
+   color: white;
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+/* Estilo para las filas */
+
+.accionesDiv {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.edit-button,
+.delete-button {
+   background: none;
+   border: none;
+   font-size: 16px;
+}
+
+.edit-button {
+   margin-right: 10px;
+}
+
+.divNoData {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+.fakeButton {
+   cursor: pointer;
+}
+
+.loading-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+   .table-wrapper {
+      width: 90%;
+      overflow-x: auto;
+   }
+
+   table {
+      max-width: 500px;
+   }
+
+   th,
+   td {
+      padding: 8px 10px;
+      font-size: 18px;
+   }
+
+   td a {
+      font-size: 18px;
+   }
+
+   .accionesDiv {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+   }
+
+   .edit-button,
+   .delete-button {
+      font-size: 12px;
+   }
+}
+
+@media (max-width: 576px) {
+   .table-wrapper {
+      width: 90%;
+      max-width: fit-content;
+      overflow-x: auto;
+   }
+
+   th,
+   td {
+      font-size: 14px;
+   }
+
+   td a {
+      font-size: 14px;
+   }
+
+   .edit-button,
+   .delete-button {
+      font-size: 12px;
+   }
+}

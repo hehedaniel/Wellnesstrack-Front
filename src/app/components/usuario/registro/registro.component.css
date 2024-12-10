@@ -1,0 +1,21 @@
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-top: 35px;
+}
+
+.btnRegistro {
+   background-color: var(--TERTIARY_600);
+}
+
+@media (max-width: 768px) {
+   button {
+      font-size: 14px;
+   }
+
+   .mat-form-field {
+      width: 80%;
+   }
+}

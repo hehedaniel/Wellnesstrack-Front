@@ -1,0 +1,29 @@
+mat-tab-group {
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: var(--SECONDARY_50);
+  margin-top: 7vh;
+  border-radius: 10px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 3vh;
+}
+
+#comidasTabs, #ejerciciosTabs {
+  margin-top: 2% !important;
+}
+
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: #fa010500;
+  --mat-tab-header-pagination-icon-color: black;
+  --mat-tab-header-inactive-label-text-color: #727272;
+  --mat-tab-header-active-label-text-color: black;
+  --mat-tab-header-active-ripple-color: black;
+  --mat-tab-header-inactive-ripple-color: black;
+  --mat-tab-header-inactive-focus-label-text-color: rgb(71, 71, 71);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 1);
+  --mat-tab-header-active-focus-label-text-color: black;
+  --mat-tab-header-active-hover-label-text-color: black;
+  --mat-tab-header-active-focus-indicator-color: #4cb45500;
+  --mat-tab-header-active-hover-indicator-color: #00000000;
+}

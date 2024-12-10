@@ -1,0 +1,28 @@
+@if (idRecibiddo) {
+<div class="popUp">
+
+    <div class="cabecera">
+        <h1>¿Desea eliminar el siguiente ejercicio realizado?</h1>
+    </div>
+
+    <div class="infoEjercicio">
+        <div class="infoIzq">
+            <p> <strong>Fecha: </strong>{{fecha}}</p>
+            <p> <strong>Hora: </strong>{{hora}}</p>
+        </div>
+        <div class="infoDer">
+            <p> <strong>Ejercicio: </strong>{{nombre}}</p>
+            <p> <strong>Calorías quemadas: </strong>{{calorias}}</p>
+        </div>
+    </div>
+    <div class="pieForm">
+        <button class="btnCancelar" (click)="closeDialog()">Cancelar</button>
+        <button class="btnEliminar" (click)="eliminarEjercicioRealizado()">Eliminar</button>
+    </div>
+
+</div>
+}@else {
+<div class="loading-container">
+    <mat-spinner class="spinner"></mat-spinner>
+</div>
+}

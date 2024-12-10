@@ -1,0 +1,41 @@
+<div class="comidasHome">
+  <div class="content">
+
+    <h1>Alimentos y recetas consumidas</h1>
+
+    <div class="date-container">
+      <div>
+         <mat-label>Selecciona un rango de fechas</mat-label>
+         <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+         ></mat-datepicker-toggle>
+         <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+         <mat-date-range-input
+            [formGroup]="rangoFechas"
+            [rangePicker]="picker"
+         >
+            <input
+               matStartDate
+               formControlName="start"
+               placeholder="Start date"
+               hidden
+            />
+            <input
+               matEndDate
+               formControlName="end"
+               placeholder="End date"
+               hidden
+            />
+         </mat-date-range-input>
+      </div>
+   </div>
+
+    <app-tabla-comidas></app-tabla-comidas>
+
+    <div class="divBtn">
+      <button class="btnEjerciciosHome btnProponer fakeButton" (click)="proponerComida()">Proponer comida</button>
+      <button class="btnEjerciciosHome btnAnadir fakeButton" (click)="openDialog()">Añadir</button>
+    </div>
+  </div>
+</div>

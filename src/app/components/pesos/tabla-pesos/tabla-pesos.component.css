@@ -1,0 +1,146 @@
+.page-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   padding: 20px;
+}
+
+button {
+   border: 0;
+   border-radius: 8px;
+}
+
+.divBtn {
+   margin-top: 1%;
+   display: flex;
+   justify-content: center;
+   width: 80%;
+}
+
+.anadirBtn {
+   background-color: var(--TERTIARY_500);
+   width: 25%;
+   color: white;
+   height: 35px;
+}
+
+table {
+   border-collapse: collapse;
+   width: 100%;
+   border-radius: 54px;
+   overflow: scroll;
+}
+
+th,
+td {
+   padding: 20px 45px;
+   text-align: center;
+   border-bottom: 1px solid var(--PRIMARY_600);
+}
+
+th {
+   font-weight: bold;
+   background-color: var(--PRIMARY_500) !important;
+   color: white;
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+.accionesDiv {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.edit-button,
+.delete-button {
+   background: none;
+   border: none;
+   font-size: 28px;
+}
+
+.edit-button {
+   margin-right: 10px;
+}
+
+.divNoData {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.fakeButton {
+   cursor: pointer;
+}
+
+.loading-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.table-wrapper {
+   width: 90%;
+   overflow-x: auto;
+}
+
+table {
+   border-collapse: collapse;
+   min-width: 90%;
+   border-radius: 54px;
+}
+
+.page-container .table-wrapper {
+   width: 100%;
+   max-height: 400px;
+   overflow-y: auto;
+   overflow-x: auto;
+   position: relative;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+   .table-wrapper {
+      overflow-x: auto;
+      overflow-y: auto;
+   }
+
+   table {
+      max-width: 500px;
+   }
+
+   th,
+   td,
+   mat-header-cell {
+      padding: 8px 10px;
+      font-size: 14px;
+   }
+
+   .accionesDiv {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+   }
+
+   .divBtn {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .anadirBtn {
+      margin-top: 4%;
+      font-size: 14px;
+   }
+}
+
+@media (max-width: 576px) {
+}

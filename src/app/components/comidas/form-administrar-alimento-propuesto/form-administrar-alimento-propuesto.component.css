@@ -1,0 +1,244 @@
+body {
+   background-color: #f5f5f5;
+}
+
+.proponerRecetaBody {
+   max-width: 100%;
+   min-height: auto;
+   background-color: #ffffff;
+   border: 2px solid black;
+   padding: 20px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+
+.divTitulo {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.divInfo {
+   display: flex;
+   justify-content: center;
+}
+
+.contenedor {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.partePrinciapl {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.principalIzq,
+.principalDer {
+   width: 48%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.parteNutrientes {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 2%;
+   margin-bottom: 2%;
+}
+
+.columna1,
+.columna2 {
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 2%;
+   padding-left: 9%;
+}
+
+.columna3 {
+   width: 50%;
+}
+
+.input-div input {
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   width: 80%;
+   padding: 0.3rem;
+   margin: 1%;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+}
+
+.input-div-descripcion textarea {
+   background-color: #f5f5f5;
+   border: 1px solid var(--EXTRA_WHITE);
+   border-radius: 4px;
+}
+
+.input-div {
+   display: flex !important;
+   flex-direction: column !important;
+   width: 80%;
+}
+
+.labelInput {
+   font-size: 1rem;
+   margin: 0.2rem;
+}
+
+.image-placeholder {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   margin: 1%;
+}
+
+.parteBotones {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+button {
+   color: white;
+   padding: 18px 60px;
+   border: none;
+   border-radius: 5px;
+   font-size: 20px;
+}
+
+.btnRechazar {
+   background-color: var(--ERROR_500);
+}
+.btnAceptar {
+   background-color: var(--SUCCESS_600);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   h1 {
+      font-size: 24px;
+      margin: 0;
+   }
+   h4 {
+      font-size: 18px;
+   }
+
+   .labelInput,
+   .partePrinciapl,
+   textarea {
+      font-size: 14px !important;
+   }
+
+   .partePrinciapl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .izquierda,
+   .derecha {
+      width: 45%;
+   }
+
+   .columna1,
+   .columna2 {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+   }
+
+   .parteNutrientes,
+   .parteFinal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+
+   .input-div input {
+      font-size: 14px !important;
+      width: 80%;
+      display: flex;
+      align-items: center;
+   }
+
+   .input-div {
+      font-size: 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 50%;
+   }
+
+   .columna1 .input-div,
+   .columna2 .input-div {
+      width: 80%;
+   }
+
+   .parteFinal {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+
+   .parteImagen,
+   .principalDescripcion {
+      width: 40%;
+   }
+
+   .input-div-descripcion {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+   }
+
+   button {
+      margin-top: 3%;
+      padding: 10px 30px;
+      font-size: 14px;
+   }
+}
+
+@media (max-width: 576px) {
+   .parteNutrientes,
+   .parteFinal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .input-div,
+   .columna1,
+   .columna2 {
+      width: 100%;
+   }
+
+   .columna2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+
+   .izqueirdaCol2,
+   .derechaCol2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+}

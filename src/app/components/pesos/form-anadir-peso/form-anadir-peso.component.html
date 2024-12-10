@@ -1,0 +1,39 @@
+<div class="popUp">
+   <div class="cabecera">
+      <h1>Introduce tu nuevo peso</h1>
+
+      <h2 (click)="closeDialog()" class="fakeButton">X</h2>
+   </div>
+
+   <!-- <form [formGroup]="formEditarPeso" (ngSubmit)="anadirPeso()">
+      <div class="formPeso">
+         <div class="infoPeso">
+            <p>Fecha: {{ fecha }}</p>
+            <p>Hora: {{ hora }}</p>
+         </div>
+         <mat-form-field>
+            <input matInput type="number" placeholder="Peso" formControlName="peso" min="0" />
+            @if(formEditarPeso.get('Peso')?.hasError('required')){
+            <mat-error> Debe indicar un peso </mat-error>
+            }
+         </mat-form-field>
+      </div>
+      <div class="pieForm">
+         <button mat-raised-button color="primary" type="submit">Guardar</button>
+      </div>
+   </form> -->
+
+   <div class="formPeso">
+      <div class="infoPeso">
+         <p>Fecha: {{ fecha }}</p>
+         <p>Hora: {{ hora }}</p>
+      </div>
+      <div class="input-div">
+         <label for="peso" class="labelInput">Peso (kg)</label>
+         <input pInputText type="text" placeholder="Peso" id="peso" [(ngModel)]="peso" />
+      </div>
+   </div>
+   <div class="piePopUp">
+      <button class="btnGuardar" (click)="anadirPeso()" type="submit">Guardar</button>
+   </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="page-container">
+   <div class="table-wrapper">
+      @if (existeData) {
+      <table mat-table [dataSource]="dataSource" matSort>
+         <!-- Dia Column -->
+         <ng-container matColumnDef="Dia">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Dia</th>
+            <td mat-cell *matCellDef="let row">{{ row.Dia }}</td>
+         </ng-container>
+
+         <!-- Hora Column -->
+         <ng-container matColumnDef="Hora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
+            <td mat-cell *matCellDef="let row">{{ row.Hora }}</td>
+         </ng-container>
+
+         <!-- Nombre Column -->
+         <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let row">
+               <a href="#" (click)="mostrarInfoComida(row, $event)">
+                  {{ row.Nombre }}
+               </a>
+            </td>
+         </ng-container>
+
+         <!-- Calorias columna -->
+         <ng-container matColumnDef="Calorias">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Calorias</th>
+            <td mat-cell *matCellDef="let row">{{ row.Calorias }}</td>
+         </ng-container>
+
+         <!-- Acciones Column -->
+         <ng-container matColumnDef="Acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell class="td-acciones" *matCellDef="let row">
+               <div class="acciones-container">
+                  <img class="edit-button fakeButton" src="../../../assets/icons/editBlack12.svg" (click)="editarComida(row)" alt="" />
+                  <img class="delete-button fakeButton" src="../../../assets/icons/deleteBlack12.svg" (click)="eliminarComida(row)" alt="" />
+               </div>
+            </td>
+         </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      } @else if (sinDatos){
+      <div class="divNoData">
+         <p>!No se encontraron alimentos consumidos!</p>
+         <div class="date-container">
+            <div>
+               <mat-label>Selecciona un rango de fechas</mat-label>
+               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+               <mat-date-range-picker touchUi #picker></mat-date-range-picker>
+               <mat-date-range-input [formGroup]="rangoFechas" [rangePicker]="picker">
+                  <input matStartDate formControlName="start" placeholder="Start date" hidden />
+                  <input matEndDate formControlName="end" placeholder="End date" hidden />
+               </mat-date-range-input>
+            </div>
+         </div>
+      </div>
+      } @else {
+      <div class="loading-container">
+         <mat-spinner></mat-spinner>
+         <p>Comprobando registros...</p>
+      </div>
+      }
+   </div>
+</div>

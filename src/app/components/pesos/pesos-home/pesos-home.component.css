@@ -1,0 +1,19 @@
+.pesoGrafica {
+   margin-top: 30px;
+   min-height: 500px;
+}
+
+.pesosHome {
+   display: flex;
+   justify-content: center;
+}
+
+.pesosHomeContent {
+   margin: 3%;
+   padding-bottom: 1%;
+   width: 70%;
+   background-color: var(--SECONDARY_50);
+   border-radius: 10px;
+   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+   position: relative;
+}

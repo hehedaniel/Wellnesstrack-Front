@@ -1,0 +1,83 @@
+<div class="proponerAlimentoBody">
+   <div class="contenedor">
+      <div class="header">
+         <div class="divTitulo">
+            <h1>Proponer Receta</h1>
+         </div>
+         <div class="divInfo">
+            <h4>Introduce la información principal del receta</h4>
+         </div>
+      </div>
+      <div>
+         <div class="contForm">
+            <div class="izq-form">
+               <div class="input-div">
+                  <label for="nombre" class="labelInput">Nombre</label>
+                  <input
+                     pInputText
+                     id="nombre"
+                     aria-describedby="nombre-help"
+                     [(ngModel)]="nombre"
+                  />
+               </div>
+               <div class="input-div">
+                  <label for="cantidad">Cantidad de la receta (gr o ml)</label>
+                  <input
+                     type="number"
+                     pInputNumber
+                     id="cantidad"
+                     [(ngModel)]="cantidad"
+                     mode="decimal"
+                     [min]="1"
+                  />
+               </div>
+               <div class="input-div">
+                  <label for="descripcion">Descripción</label>
+                  <textarea
+                     id="descripcion"
+                     rows="7"
+                     cols="25"
+                     [(ngModel)]="descripcion"
+                     pInputTextarea
+                  >
+                  </textarea>
+               </div>
+            </div>
+            <div class="der-form">
+               <div class="image-placeholder">
+                  <input type="file" (change)="subirImg($event)" />
+                  <p-image
+                     [src]="base64Image"
+                     alt="Imagen de muestra"
+                     width="175"
+                     height="175"
+                     [preview]="imgPreview"
+                  />
+               </div>
+
+               <div class="input-div">
+                  <label for="instrucciones">Instrucciones</label>
+                  <div class="divTextarea">
+                     <textarea
+                     id="instrucciones"
+                     rows="7"
+                     cols="28"
+                     [(ngModel)]="instrucciones"
+                     pInputTextarea
+                  >
+                  </textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="fin-form">
+            <button (click)="cancelar()" class="btnCancelar fakeButton">
+               Cancelar
+            </button>
+            <button class="btnSiguiente fakeButton" (click)="siguienteForm()">
+               Siguiente
+            </button>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="center-content">
+   <form [formGroup]="formularioLogin" (ngSubmit)="loginUser()" class="formLogin">
+      <mat-form-field class="example-full-width">
+         <mat-label>Correo</mat-label>
+         <input type="email" matInput placeholder="Correo" formControlName="correo" />
+         <mat-icon matSuffix>email</mat-icon>
+         @if(formularioLogin.get('correo')?.hasError('pattern') || formularioLogin.get('correo')?.hasError('required')){
+         <mat-error> Por favor, introduzca un correo válido </mat-error>
+         }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+         <mat-label>Contraseña</mat-label>
+         <input type="password" matInput placeholder="Contraseña" formControlName="contrasena" [type]="hide ? 'password' : 'text'" />
+         <mat-icon matSuffix (click)="hide = !hide">{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </mat-form-field>
+
+      <div class="btnsLogin">
+         <button class="btnLogin fakeButton" (click)="loginUser()">Iniciar Sesión</button>
+      </div>
+   </form>
+
+   <div class="p_aviso">
+      <p>Los campos marcados con * son obligatorios</p>
+   </div>
+</div>

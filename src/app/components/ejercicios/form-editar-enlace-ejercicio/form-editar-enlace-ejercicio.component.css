@@ -1,0 +1,65 @@
+body {
+   background-color: #f5f5f5;
+}
+
+.popUp {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-header {
+   display: flex;
+   justify-content: space-between;
+   margin: 3%;
+}
+
+.close-button {
+   font-size: 24px;
+   cursor: pointer;
+}
+
+.form-enlace {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 3%;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+
+.input-enlace {
+   margin: 3%;
+   width: 70%;
+}
+
+.input-field {
+   width: 100%;
+   padding: 10px;
+   border: 1.5px solid var(--EXTRA_BLACK);
+   border-radius: 10px;
+   font-size: 16px;
+   background-color: #e0e0e0;
+}
+
+.pieForm {
+   margin-top: 3%;
+   width: 80%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.proponerEjercicioBtn {
+   width: 55%;
+   background-color: var(--TERTIARY_400);
+   color: white;
+   margin: 3%;
+   height: 35px;
+   border: none;
+   border-radius: 10px;
+}

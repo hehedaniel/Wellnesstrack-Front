@@ -1,0 +1,45 @@
+<div class="bodyContenedor">
+   <div class="contenedor">
+      <div class="titulo">
+         <h1>Proponer Alimento - {{ comidaNombre }}</h1>
+      </div>
+
+      <div>
+         <form (ngSubmit)="proponer()" class="formulario">
+            <div class="contForm">
+               <div class="izq-form">
+                  <div class="input-div">
+                     <label for="calorias">Cantidad de calorías (kcal)</label>
+                     <p-inputNumber p-inputNumber id="calorias" name="calorias" [(ngModel)]="calorias" mode="decimal" [min]="1" />
+                  </div>
+
+                  <div class="input-div">
+                     <label for="proteinas">Cantidad de proteínas (gr)</label>
+                     <p-inputNumber p-inputNumber id="proteinas" name="proteinas" [(ngModel)]="proteinas" mode="decimal" [min]="1" />
+                  </div>
+
+                  <div class="input-div">
+                     <label for="azucares">Cantidad de azúcares (gr)</label>
+                     <p-inputNumber p-inputNumber id="azucares" name="azucares" [(ngModel)]="azucares" mode="decimal" [min]="1" />
+                  </div>
+               </div>
+               <div class="der-form">
+                  <div class="input-div">
+                     <label for="grasas">Cantidad de grasas (gr)</label>
+                     <p-inputNumber p-inputNumber id="grasas" name="grasas" [(ngModel)]="grasas" mode="decimal" [min]="1" />
+                  </div>
+
+                  <div class="input-div">
+                     <label for="carbohidratos">Cantidad de carbohidratos (gr)</label>
+                     <p-inputNumber p-inputNumber id="carbohidratos" name="carbohidratos" [(ngModel)]="carbohidratos" mode="decimal" [min]="1" />
+                  </div>
+               </div>
+            </div>
+
+            <div class="fin-form">
+               <button class="btnForm" cdkFocusInitial color="primary" type="submit">Proponer</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

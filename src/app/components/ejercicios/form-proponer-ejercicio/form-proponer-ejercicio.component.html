@@ -1,0 +1,93 @@
+<div class="form-container">
+   <div class="form-header">
+      <span class="close-button" (click)="closeDialog()" title="Cerrar formulario">X</span>
+   </div>
+   <h1>Formulario para proponer ejercicio</h1>
+   <form [formGroup]="formProponerEjercicio" (ngSubmit)="enviarPropuestaEjercicio()">
+      <div class="columnasDatos">
+         <div class="form-left">
+            <!-- Nombre -->
+            <div class="input-div">
+               <input tabindex="1" pInputText type="text" placeholder="Nombre" id="nombre" formControlName="nombre" />
+            </div>
+            <!-- Dificultad -->
+            <div class="input-div">
+               <p-dropdown formControlName="dificultad" [options]="opcionesDificultad" placeholder="Selecciona la dificultad" />
+            </div>
+            <!-- Descripción -->
+            <div class="input-div">
+               <textarea tabindex="5" rows="5" pInputTextarea formControlName="descripcion" placeholder="Descripción"></textarea>
+            </div>
+         </div>
+         <div class="form-right">
+            <!-- Grupo Muscular -->
+            <div class="input-div">
+               <input tabindex="2" pInputText formControlName="grupoMuscular" type="text" placeholder="Grupo Muscular" />
+            </div>
+            <!-- Valor MET -->
+            <div class="input-div">
+               <input
+                  tabindex="4"
+                  formControlName="valorMet"
+                  type="number"
+                  placeholder="Valor MET"
+                  id="valorMet"
+                  [(ngModel)]="valorMet"
+                  mode="decimal"
+                  [min]="1"
+               />
+            </div>
+            <!-- Instrucciones -->
+            <div class="input-div">
+               <textarea
+                  tabindex="6"
+                  rows="5"
+                  pInputTextarea
+                  formControlName="instrucciones"
+                  placeholder="Instrucciones"
+                  class="textarea-field"
+               ></textarea>
+            </div>
+         </div>
+      </div>
+
+      <!-- Tabla de enlaces -->
+      <div class="form-tabla">
+         <div class="table-container">
+            <table class="tabla-ejercicios">
+               <thead>
+                  <tr>
+                     <th>Título del Video</th>
+                     <th>Enlace</th>
+                     <th>Acciones</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  @for(enlace of enlaces; track 0){
+                  <tr>
+                     <td>{{ enlace.titulo }}</td>
+                     <td>
+                        <a href="#" (click)="abrirVideo(enlace.url, $event)">
+                           {{ enlace.url }}
+                        </a>
+                     </td>
+                     <td>
+                        <img
+                           matSuffix
+                           class="edit-button fakeButton"
+                           src="../../../assets/icons/editBlack12.svg"
+                           alt="Botón de editar"
+                           (click)="editarEnlace(enlace.numero, enlace)"
+                        />
+                     </td>
+                  </tr>
+                  }
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="form-footer">
+         <button type="submit" class="proponerEjercicioBtn fakeButton" (click)="enviarPropuestaEjercicio()">Proponer</button>
+      </div>
+   </form>
+</div>
