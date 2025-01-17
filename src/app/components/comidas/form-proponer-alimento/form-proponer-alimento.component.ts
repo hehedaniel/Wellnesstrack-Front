@@ -49,7 +49,7 @@ export class FormProponerAlimentoComponent {
    siguienteForm() {
       const dialogData = {
          tipo: 'alimento',
-         nombre: 'Macarrones con salsa de queso roquefort',
+         nombre: this.nombre,
          cantidad: this.cantidad,
          marca: this.marca,
          descripcion: this.descripcion,
